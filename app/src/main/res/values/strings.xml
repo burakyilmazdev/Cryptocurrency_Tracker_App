@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Cryptocurrency_Tracker_App</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="appTitle">Coin Tracker</string>
+    <string name="signUp">Sign Up</string>
+    <string name="hintEmail">E-mail</string>
+    <string name="hintPassword">Password</string>
+    <string name="loginButton">LOGIN</string>
+    <string name="signUpButton">SIGN UP</string>
+    <string name="dontYouHaveAccount">Don\'t you have an account?</string>
+    <string name="forgetPassword">Did you forget your password?</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

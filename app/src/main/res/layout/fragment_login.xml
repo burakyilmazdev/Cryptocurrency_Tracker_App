@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@mipmap/login"
+    tools:context=".LoginFragment">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/appTitle"
+        android:textAlignment="center"
+        android:textSize="@dimen/textSizeXLarge"
+        android:textColor="@color/white"
+        android:layout_marginStart="@dimen/MarginMediumPlus"
+        android:layout_marginTop="@dimen/loginTitleMargin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+    </TextView>
+
+
+    <EditText
+        android:id="@+id/et_mail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title"
+        android:layout_marginTop="@dimen/MarginMediumPlus"
+        android:textColor="@color/white"
+        android:layout_marginLeft="@dimen/MarginMediumPlus"
+        android:layout_marginRight="@dimen/MarginMediumPlus"
+        android:hint="@string/hintEmail"/>
+
+    <EditText
+        android:id="@+id/et_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_mail"
+        android:layout_marginTop="@dimen/MarginMediumPlus"
+        android:textColor="@color/white"
+        android:layout_marginLeft="@dimen/MarginMediumPlus"
+        android:layout_marginRight="@dimen/MarginMediumPlus"
+        android:hint="@string/hintPassword"/>
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_password"
+        android:text="@string/loginButton"
+        android:layout_marginLeft="@dimen/MarginMediumPlus"
+        android:layout_marginRight="@dimen/MarginMediumPlus"
+        android:layout_marginTop="@dimen/MarginMedium"
+        android:backgroundTint="@color/loginButton">
+    </Button>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_login"
+        android:text="@string/dontYouHaveAccount"
+        android:textSize="@dimen/textSizeLarge"
+        android:textColor="@color/white"
+        android:layout_marginLeft="@dimen/MarginMediumPlus"
+        android:layout_marginRight="@dimen/MarginMediumPlus"
+        android:layout_marginTop="@dimen/MarginMediumPlus">
+
+    </TextView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
