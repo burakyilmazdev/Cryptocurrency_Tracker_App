@@ -1,12 +1,9 @@
-package com.example.cryptocurrency_tracker_app
+package com.example.cryptocurrency_tracker_app.ui
 
-import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.AttributeSet
-import android.view.View
-import android.widget.Button
 import androidx.navigation.fragment.NavHostFragment
+import com.example.cryptocurrency_tracker_app.R
 
 class MainActivity : AppCompatActivity() {
 

@@ -10,7 +10,7 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.cryptocurrency_tracker_app.LoginFragment"
+        android:name="com.example.cryptocurrency_tracker_app.ui.LoginFragment"
         android:label="fragment_sign_up"
         tools:layout="@layout/fragment_login" >
         <action
@@ -23,11 +23,13 @@
 
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="com.example.cryptocurrency_tracker_app.SignUpFragment"
+        android:name="com.example.cryptocurrency_tracker_app.ui.SignUpFragment"
         android:label="fragment_sign_up"
         tools:layout="@layout/fragment_sign_up" >
         <action
             android:id="@+id/action_signUpFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right" />
     </fragment>
 </navigation>
