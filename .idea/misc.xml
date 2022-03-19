@@ -5,6 +5,8 @@
       <map>
         <entry key="..\:/Users/brky9/AndroidStudioProjects/Cryptocurrency_Tracker_App/app/src/main/res/font/font.xml" value="0.284375" />
         <entry key="..\:/Users/brky9/AndroidStudioProjects/Cryptocurrency_Tracker_App/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/brky9/AndroidStudioProjects/Cryptocurrency_Tracker_App/app/src/main/res/layout/fragment_coin_list.xml" value="0.2" />
+        <entry key="..\:/Users/brky9/AndroidStudioProjects/Cryptocurrency_Tracker_App/app/src/main/res/layout/fragment_coins.xml" value="0.20854700854700856" />
         <entry key="..\:/Users/brky9/AndroidStudioProjects/Cryptocurrency_Tracker_App/app/src/main/res/layout/fragment_login.xml" value="0.264" />
         <entry key="..\:/Users/brky9/AndroidStudioProjects/Cryptocurrency_Tracker_App/app/src/main/res/layout/fragment_sign_up.xml" value="0.22826086956521738" />
       </map>

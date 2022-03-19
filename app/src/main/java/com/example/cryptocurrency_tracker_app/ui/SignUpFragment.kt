@@ -52,6 +52,7 @@ class SignUpFragment : Fragment() {
                         .addOnCompleteListener() {
                             if (it.isSuccessful){
                                 Toast.makeText(context,"User has been created!",Toast.LENGTH_SHORT).show()
+                                NavHostFragment.findNavController(this).navigate(R.id.action_signUpFragment_to_coinListFragment)
 
                             }else{
                                 Toast.makeText(context,"${it.exception?.localizedMessage}",Toast.LENGTH_SHORT).show()

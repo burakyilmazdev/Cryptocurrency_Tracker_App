@@ -72,26 +72,11 @@
     </Button>
 
     <TextView
-        android:id="@+id/tv_forgetPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_signUp"
-        android:text="@string/forgetPassword"
-        android:textSize="@dimen/textSizeLarge"
-        android:textColor="@color/white"
-        android:layout_marginLeft="@dimen/MarginMediumPlus"
-        android:layout_marginRight="@dimen/MarginMediumPlus"
-        android:layout_marginTop="@dimen/MarginMediumPlus">
-
-    </TextView>
-
-    <TextView
         android:id="@+id/tv_alreadyRegistered"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_forgetPassword"
+        app:layout_constraintTop_toBottomOf="@id/btn_signUp"
         android:text="@string/registeredAlready"
         android:textSize="@dimen/textSizeLarge"
         android:textColor="@color/white"

@@ -19,6 +19,9 @@
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_loginFragment_to_coinListFragment"
+            app:destination="@id/coinListFragment" />
     </fragment>
 
     <fragment
@@ -31,5 +34,13 @@
             app:destination="@id/loginFragment"
             app:enterAnim="@anim/slide_in_left"
             app:exitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_signUpFragment_to_coinListFragment"
+            app:destination="@id/coinListFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/coinListFragment"
+        android:name="com.example.cryptocurrency_tracker_app.ui.CoinListFragment"
+        android:label="fragment_coin_list"
+        tools:layout="@layout/fragment_coin_list" />
 </navigation>
