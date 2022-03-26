@@ -10,7 +10,7 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.cryptocurrency_tracker_app.ui.LoginFragment"
+        android:name="com.example.movie_app.ui.LoginFragment"
         android:label="fragment_sign_up"
         tools:layout="@layout/fragment_login" >
         <action
@@ -21,12 +21,14 @@
             app:popUpToInclusive="false" />
         <action
             android:id="@+id/action_loginFragment_to_coinListFragment"
-            app:destination="@id/coinListFragment" />
+            app:destination="@id/coinListFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right" />
     </fragment>
 
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="com.example.cryptocurrency_tracker_app.ui.SignUpFragment"
+        android:name="com.example.movie_app.ui.SignUpFragment"
         android:label="fragment_sign_up"
         tools:layout="@layout/fragment_sign_up" >
         <action
@@ -36,11 +38,19 @@
             app:exitAnim="@anim/slide_out_right" />
         <action
             android:id="@+id/action_signUpFragment_to_coinListFragment"
-            app:destination="@id/coinListFragment" />
+            app:destination="@id/coinListFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/coinListFragment"
-        android:name="com.example.cryptocurrency_tracker_app.ui.CoinListFragment"
+        android:name="com.example.movie_app.ui.CoinListFragment"
         android:label="fragment_coin_list"
-        tools:layout="@layout/fragment_coin_list" />
+        tools:layout="@layout/fragment_coin_list" >
+        <action
+            android:id="@+id/action_coinListFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+    </fragment>
 </navigation>

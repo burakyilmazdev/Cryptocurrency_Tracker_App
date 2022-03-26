@@ -1,4 +1,4 @@
-package com.example.cryptocurrency_tracker_app
+package com.example.movie_app
 
 import org.junit.Test
 

@@ -1,4 +1,4 @@
-package com.example.cryptocurrency_tracker_app
+package com.example.movie_app
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

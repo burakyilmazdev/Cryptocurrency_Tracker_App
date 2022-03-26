@@ -1,9 +1,8 @@
-package com.example.cryptocurrency_tracker_app.ui
+package com.example.movie_app.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.navigation.fragment.NavHostFragment
-import com.example.cryptocurrency_tracker_app.R
+import com.example.movie_app.R
 
 class MainActivity : AppCompatActivity() {
 

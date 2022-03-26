@@ -1,15 +1,13 @@
-package com.example.cryptocurrency_tracker_app.ui
+package com.example.movie_app.ui
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import com.example.cryptocurrency_tracker_app.R
-import com.example.cryptocurrency_tracker_app.databinding.FragmentCoinListBinding
-import com.example.cryptocurrency_tracker_app.databinding.FragmentLoginBinding
+import androidx.navigation.fragment.NavHostFragment
+import com.example.movie_app.R
+import com.example.movie_app.databinding.FragmentCoinListBinding
 import com.google.firebase.auth.FirebaseAuth
 
 class CoinListFragment : Fragment() {
@@ -28,6 +26,12 @@ class CoinListFragment : Fragment() {
 
         binding = FragmentCoinListBinding.inflate(inflater, container, false)
 
+        binding.btnLogout.setOnClickListener {
+            auth.signOut()
+            NavHostFragment.findNavController(this).navigate(R.id.action_coinListFragment_to_loginFragment)
+
+        }
+
 
 
 
@@ -35,7 +39,7 @@ class CoinListFragment : Fragment() {
 
 
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_coin_list, container, false)
+        return binding.root
     }
 
 
