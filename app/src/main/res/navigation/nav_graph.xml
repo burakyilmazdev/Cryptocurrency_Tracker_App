@@ -44,7 +44,7 @@
     </fragment>
     <fragment
         android:id="@+id/coinListFragment"
-        android:name="com.example.movie_app.ui.CoinListFragment"
+        android:name="com.example.movie_app.ui.MovieListFragment"
         android:label="fragment_coin_list"
         tools:layout="@layout/fragment_coin_list" >
         <action

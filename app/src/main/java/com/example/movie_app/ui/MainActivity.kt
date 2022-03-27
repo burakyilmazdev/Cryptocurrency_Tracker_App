@@ -3,7 +3,9 @@ package com.example.movie_app.ui
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.movie_app.R
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
 
