@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.navigation.fragment.NavHostFragment
 import com.example.movie_app.R
@@ -39,15 +40,19 @@ class MovieListFragment: Fragment() {
 
         binding = FragmentCoinListBinding.inflate(inflater, container, false)
 
-        val movies = movieViewModel.getMovies()
-        Log.d("TEST4","${movies.status}")
-
-        if (movies.status == Status.SUCCESS){
-            Log.d("TEST3", movies.data.toString())
-        }else{
-            Toast.makeText(context,"${movies.status}",Toast.LENGTH_LONG).show()
-            Log.d("TEST4","${movies.status}")
-        }
+       movieViewModel.movieList.observe(viewLifecycleOwner, Observer {
+           when (it.status) {
+               Status.SUCCESS -> {
+                    Log.d("TEST4","Fragment success ${it.data!!.body()!!.results[1]}")
+               }
+               Status.LOADING -> {
+                   Log.d("TEST4","Fragment loading ${it.status.toString()}")
+               }
+               else -> {
+                   Log.d("TEST4","Fragment error ${it.status.toString()}")
+               }
+           }
+       })
 
         binding.btnLogout.setOnClickListener {
             auth.signOut()

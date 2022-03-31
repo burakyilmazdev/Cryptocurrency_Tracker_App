@@ -1,11 +1,11 @@
 package com.example.movie_app.di
 
+import com.example.movie_app.data.MoviesDataSource
 import com.example.movie_app.data.service.MovieApi
 import com.example.movie_app.repository.MovieRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ActivityComponent
 import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
@@ -30,7 +30,13 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun provideMovieRepository(api:MovieApi) : MovieRepository{
-        return MovieRepository(api)
+    fun provideMovieRepository(moviesDataSource: MoviesDataSource) : MovieRepository{
+        return MovieRepository(moviesDataSource)
+    }
+
+    @Singleton
+    @Provides
+    fun provideMovieDataSource(api: MovieApi): MoviesDataSource{
+        return MoviesDataSource(api)
     }
 }

@@ -1,5 +1,6 @@
 package com.example.movie_app.data.service
 
+import androidx.lifecycle.LiveData
 import com.example.movie_app.data.models.MovieResponse
 import io.reactivex.Single
 import retrofit2.Response
