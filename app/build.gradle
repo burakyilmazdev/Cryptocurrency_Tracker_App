@@ -73,4 +73,13 @@ dependencies {
     //Coroutines
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2'
 
+    //View Pager 2
+    implementation "androidx.viewpager2:viewpager2:1.0.0"
+
+    //Rounded Imageview
+    implementation "com.makeramen:roundedimageview:2.3.0"
+
+    //Picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
 }

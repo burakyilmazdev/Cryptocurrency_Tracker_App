@@ -1,4 +1,4 @@
-package com.example.movie_app.ui
+package com.example.movie_app.ui.authentication
 
 import android.os.Bundle
 import android.text.TextUtils

@@ -10,7 +10,7 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.movie_app.ui.LoginFragment"
+        android:name="com.example.movie_app.ui.authentication.LoginFragment"
         android:label="fragment_sign_up"
         tools:layout="@layout/fragment_login" >
         <action
@@ -28,7 +28,7 @@
 
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="com.example.movie_app.ui.SignUpFragment"
+        android:name="com.example.movie_app.ui.authentication.SignUpFragment"
         android:label="fragment_sign_up"
         tools:layout="@layout/fragment_sign_up" >
         <action
@@ -46,7 +46,7 @@
         android:id="@+id/coinListFragment"
         android:name="com.example.movie_app.ui.MovieListFragment"
         android:label="fragment_coin_list"
-        tools:layout="@layout/fragment_coin_list" >
+        tools:layout="@layout/fragment_movie_list" >
         <action
             android:id="@+id/action_coinListFragment_to_loginFragment"
             app:destination="@id/loginFragment"
