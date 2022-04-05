@@ -10,6 +10,7 @@
     <string name="dontYouHaveAccount">Don\'t you have an account?</string>
     <string name="forgetPassword">Did you forget your password?</string>
     <string name="registeredAlready">Already registered?</string>
+    <string name="Popular">Popular</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

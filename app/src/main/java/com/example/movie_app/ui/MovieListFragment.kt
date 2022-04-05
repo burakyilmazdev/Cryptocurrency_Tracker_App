@@ -40,12 +40,11 @@ class MovieListFragment : Fragment() {
     private lateinit var viewPagerAdapter: ViewPagerAdapter
     private lateinit var viewPager2: ViewPager2
     private lateinit var handler: Handler
-    private val movieList: ArrayList<Result> = arrayListOf()
+    private val recyclerViewAdapter = RecyclerViewAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         auth = FirebaseAuth.getInstance()
-
         viewPagerAdapter = ViewPagerAdapter()
         handler = Handler(Looper.myLooper()!!)
 
@@ -55,6 +54,7 @@ class MovieListFragment : Fragment() {
                     Log.d("TEST4", "Fragment Success ${it.data.toString()}")
                     val movieList = it.data!!.body()!!.results
                     viewPagerAdapter.setProductList(movieList)
+                    recyclerViewAdapter.setMovieList(movieList)
 
                 }
                 Status.LOADING -> {
@@ -73,7 +73,7 @@ class MovieListFragment : Fragment() {
     ): View? {
         binding = FragmentMovieListBinding.inflate(inflater, container, false)
         viewPager2 = binding.movieViewPager
-
+        binding.movieRecyclerView.adapter = recyclerViewAdapter
 
         viewPager2.adapter = viewPagerAdapter
         viewPager2.offscreenPageLimit = 3

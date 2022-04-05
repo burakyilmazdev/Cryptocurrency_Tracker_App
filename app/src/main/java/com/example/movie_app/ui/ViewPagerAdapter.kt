@@ -19,9 +19,9 @@ class ViewPagerAdapter()
     private val movieList = arrayListOf<Result>()
 
     @SuppressLint("NotifyDataSetChanged")
-    fun setProductList(productList : List<Result>){
+    fun setProductList(movieList : List<Result>){
         this.movieList.clear()
-        this.movieList.addAll(productList)
+        this.movieList.addAll(movieList)
         notifyDataSetChanged()
     }
 

@@ -8,7 +8,9 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="hint">#92F1E5E5</color>
-    <color name="background">#8FD4F3</color>
+    <color name="background">#A0A0A0</color>
     <color name="loginButton">#4CA8D1</color>
+
+
 
 </resources>

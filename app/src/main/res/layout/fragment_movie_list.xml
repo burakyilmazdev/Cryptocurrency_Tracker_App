@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     tools:context=".ui.MovieListFragment">
 
 
@@ -19,6 +20,37 @@
         app:layout_constraintTop_toTopOf="parent">
 
     </androidx.viewpager2.widget.ViewPager2>
+
+    <TextView
+        android:id="@+id/titlePopular"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Popular"
+        android:textColor="@color/white"
+        android:textSize="@dimen/textSizeLarge"
+        android:textStyle="bold"
+        android:layout_marginStart="@dimen/MarginSmall"
+        android:layout_marginTop="@dimen/MarginLarge"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/movie_viewPager">
+    </TextView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/movieRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/titlePopular"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:layout_marginStart="@dimen/MarginSmall"
+        android:layout_marginTop="@dimen/MarginMedium">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+
 
 
 
