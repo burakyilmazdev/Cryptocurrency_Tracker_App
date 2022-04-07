@@ -26,6 +26,8 @@ import com.example.movie_app.data.models.Result
 import com.example.movie_app.data.models.Status
 import com.example.movie_app.data.service.MovieApi
 import com.example.movie_app.databinding.FragmentMovieListBinding
+import com.example.movie_app.databinding.RecyclerviewItemBinding
+import com.example.movie_app.databinding.ViewPagerItemBinding
 import com.example.movie_app.viewModel.MovieViewModel
 import com.google.firebase.auth.FirebaseAuth
 import dagger.hilt.android.AndroidEntryPoint
@@ -35,7 +37,7 @@ import javax.inject.Inject
 import kotlin.math.abs
 
 @AndroidEntryPoint
-class MovieListFragment : Fragment(), ViewPagerAdapter.OnItemClickListener{
+class MovieListFragment : Fragment(), ViewPagerAdapter.OnItemClickListener,RecyclerViewAdapter.OnItemClickListener{
 
     private lateinit var auth: FirebaseAuth
     private lateinit var binding: FragmentMovieListBinding
@@ -43,7 +45,9 @@ class MovieListFragment : Fragment(), ViewPagerAdapter.OnItemClickListener{
     private var viewPagerAdapter = ViewPagerAdapter(this)
     private lateinit var viewPager2: ViewPager2
     private lateinit var handler: Handler
-    private val recyclerViewAdapter = RecyclerViewAdapter()
+    private val recyclerViewAdapter = RecyclerViewAdapter(this)
+    private lateinit var recyclerviewItemBinding:RecyclerviewItemBinding
+    private lateinit var viewPagerItemBinding: ViewPagerItemBinding
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,16 +56,23 @@ class MovieListFragment : Fragment(), ViewPagerAdapter.OnItemClickListener{
 
         handler = Handler(Looper.myLooper()!!)
 
+
+
         movieViewModel.movieList.observe(this, Observer {
             when (it.status) {
                 Status.SUCCESS -> {
                     Log.d("TEST4", "Fragment Success ${it.data.toString()}")
+                    recyclerviewItemBinding.rvProgressBar.visibility = View.GONE
+                    viewPagerItemBinding.vpProgressBar.visibility = View.GONE
                     val movieList = it.data!!.body()!!.results
                     viewPagerAdapter.setProductList(movieList)
                     recyclerViewAdapter.setMovieList(movieList)
                 }
                 Status.LOADING -> {
                     Log.d("TEST4", "Fragment loading ${it.status.toString()}")
+                    recyclerviewItemBinding.rvProgressBar.visibility = View.VISIBLE
+                    viewPagerItemBinding.vpProgressBar.visibility = View.VISIBLE
+
                 }
                 else -> {
                     Log.d("TEST4", "Fragment error ${it.status.toString()}")
@@ -75,6 +86,9 @@ class MovieListFragment : Fragment(), ViewPagerAdapter.OnItemClickListener{
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentMovieListBinding.inflate(inflater, container, false)
+        recyclerviewItemBinding = RecyclerviewItemBinding.inflate(inflater,container,false)
+        viewPagerItemBinding = ViewPagerItemBinding.inflate(inflater,container,false)
+
         viewPager2 = binding.movieViewPager
         binding.movieRecyclerView.adapter = recyclerViewAdapter
 
@@ -102,7 +116,10 @@ class MovieListFragment : Fragment(), ViewPagerAdapter.OnItemClickListener{
         findNavController().navigate(action)
     }
 
-
+    override fun onRecyclerViewItemClick(movie: Result) {
+        val action = MovieListFragmentDirections.actionMovieListFragmentToMovieDetailFragment(movie)
+        findNavController().navigate(action)
+    }
 
 
 }

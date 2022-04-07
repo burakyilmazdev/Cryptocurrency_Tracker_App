@@ -8,6 +8,20 @@
     app:strokeWidth="3dp"
     app:cardElevation="10dp">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ProgressBar
+            android:id="@+id/vp_progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            android:layout_centerInParent="true"/>
+
+
+    </RelativeLayout>
+
     <ImageView
         android:id="@+id/moviePoster"
         android:layout_width="match_parent"
