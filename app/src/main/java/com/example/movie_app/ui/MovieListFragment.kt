@@ -44,7 +44,6 @@ class MovieListFragment : Fragment(), ViewPagerAdapter.OnItemClickListener{
     private lateinit var viewPager2: ViewPager2
     private lateinit var handler: Handler
     private val recyclerViewAdapter = RecyclerViewAdapter()
-    private val MovieDetailFragment = MovieDetailFragment()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -94,12 +93,12 @@ class MovieListFragment : Fragment(), ViewPagerAdapter.OnItemClickListener{
         viewPager2.setPageTransformer(transformer)
 
         return binding.root
+
+
     }
 
     override fun onItemClick(movie: Result) {
-        Log.d("TEST5","Click Item ${movie.title}")
-        Toast.makeText(context,"Click ${movie.title}",Toast.LENGTH_SHORT).show()
-        val action = MovieListFragmentDirections.actionCoinListFragmentToMovieDetailFragment(movie)
+        val action = MovieListFragmentDirections.actionMovieListFragmentToMovieDetailFragment(movie)
         findNavController().navigate(action)
     }
 

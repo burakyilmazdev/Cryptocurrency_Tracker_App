@@ -42,7 +42,7 @@ class LoginFragment: Fragment() {
 
         val currentUser = auth.currentUser
         if (currentUser!=null){
-            NavHostFragment.findNavController(this).navigate(R.id.action_loginFragment_to_coinListFragment)
+            NavHostFragment.findNavController(this).navigate(R.id.action_loginFragment_to_movieListFragment)
         }
 
         //Login Process
@@ -57,7 +57,7 @@ class LoginFragment: Fragment() {
                     auth.signInWithEmailAndPassword(userMail,userPassword)
                         .addOnCompleteListener() {
                             if (it.isSuccessful){
-                                NavHostFragment.findNavController(this).navigate(R.id.action_loginFragment_to_coinListFragment)
+                                NavHostFragment.findNavController(this).navigate(R.id.action_loginFragment_to_movieListFragment)
                                 Toast.makeText(context,"Password Correct!", Toast.LENGTH_SHORT).show()
 
                             }else{

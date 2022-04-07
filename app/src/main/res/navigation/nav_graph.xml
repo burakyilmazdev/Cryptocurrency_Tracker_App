@@ -20,8 +20,8 @@
             app:exitAnim="@anim/slide_out_left"
             app:popUpToInclusive="false" />
         <action
-            android:id="@+id/action_loginFragment_to_coinListFragment"
-            app:destination="@id/coinListFragment"
+            android:id="@+id/action_loginFragment_to_movieListFragment"
+            app:destination="@id/movieListFragment"
             app:enterAnim="@anim/slide_in_left"
             app:exitAnim="@anim/slide_out_right" />
     </fragment>
@@ -37,24 +37,26 @@
             app:enterAnim="@anim/slide_in_left"
             app:exitAnim="@anim/slide_out_right" />
         <action
-            android:id="@+id/action_signUpFragment_to_coinListFragment"
-            app:destination="@id/coinListFragment"
+            android:id="@+id/action_signUpFragment_to_movieListFragment"
+            app:destination="@id/movieListFragment"
             app:enterAnim="@anim/slide_in_left"
             app:exitAnim="@anim/slide_out_right" />
     </fragment>
     <fragment
-        android:id="@+id/coinListFragment"
+        android:id="@+id/movieListFragment"
         android:name="com.example.movie_app.ui.MovieListFragment"
-        android:label="fragment_coin_list"
+        android:label="fragment_movie_list"
         tools:layout="@layout/fragment_movie_list" >
         <action
-            android:id="@+id/action_coinListFragment_to_loginFragment"
+            android:id="@+id/action_movieListFragment_to_loginFragment"
             app:destination="@id/loginFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left" />
         <action
-            android:id="@+id/action_coinListFragment_to_movieDetailFragment"
-            app:destination="@id/movieDetailFragment" />
+            android:id="@+id/action_movieListFragment_to_movieDetailFragment"
+            app:destination="@id/movieDetailFragment"
+            app:enterAnim="@anim/slide_in_bottom"
+            app:exitAnim="@anim/slide_out_top" />
     </fragment>
     <fragment
         android:id="@+id/movieDetailFragment"
