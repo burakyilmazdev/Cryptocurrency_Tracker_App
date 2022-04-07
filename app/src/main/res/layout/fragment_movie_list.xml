@@ -12,6 +12,7 @@
         android:id="@+id/movie_viewPager"
         android:layout_width="0dp"
         android:layout_height="350dp"
+        android:animateLayoutChanges="true"
         android:paddingStart="80dp"
         android:paddingEnd="80dp"
         android:layout_marginTop="@dimen/MarginLarge"

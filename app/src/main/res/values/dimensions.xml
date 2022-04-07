@@ -2,6 +2,7 @@
 <resources>
     <dimen name="textSizeSmall">12sp</dimen>
     <dimen name="textSizeMedium">16sp</dimen>
+    <dimen name="textSizeMediumPlus">18sp</dimen>
     <dimen name="textSizeLarge">20sp</dimen>
     <dimen name="textSizeXLarge">25sp</dimen>
     <dimen name="MarginLarge">64dp</dimen>

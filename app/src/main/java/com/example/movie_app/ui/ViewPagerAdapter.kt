@@ -13,7 +13,7 @@ import com.example.movie_app.data.models.Result
 import com.example.movie_app.databinding.ViewPagerItemBinding
 import com.squareup.picasso.Picasso
 
-class ViewPagerAdapter()
+class ViewPagerAdapter(private val listener : OnItemClickListener)
     :RecyclerView.Adapter<ViewPagerAdapter.ImageViewHolder>() {
 
     private val movieList = arrayListOf<Result>()
@@ -39,10 +39,18 @@ class ViewPagerAdapter()
 
     override fun onBindViewHolder(holder: ImageViewHolder, position: Int) {
         Picasso.get().load("https://image.tmdb.org/t/p/w500/"+movieList[position].poster_path).into(holder.imageView)
+        holder.imageView.setOnClickListener {
+            listener.onItemClick(movieList[position])
+        }
+
     }
 
     override fun getItemCount(): Int {
         return movieList.size
+    }
+
+    interface OnItemClickListener{
+        fun onItemClick(movie:Result)
     }
 
 

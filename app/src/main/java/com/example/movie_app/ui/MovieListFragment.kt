@@ -13,7 +13,10 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
+import androidx.navigation.NavAction
+import androidx.navigation.NavDirections
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
@@ -32,20 +35,22 @@ import javax.inject.Inject
 import kotlin.math.abs
 
 @AndroidEntryPoint
-class MovieListFragment : Fragment() {
+class MovieListFragment : Fragment(), ViewPagerAdapter.OnItemClickListener{
 
     private lateinit var auth: FirebaseAuth
     private lateinit var binding: FragmentMovieListBinding
     private val movieViewModel: MovieViewModel by viewModels()
-    private lateinit var viewPagerAdapter: ViewPagerAdapter
+    private var viewPagerAdapter = ViewPagerAdapter(this)
     private lateinit var viewPager2: ViewPager2
     private lateinit var handler: Handler
     private val recyclerViewAdapter = RecyclerViewAdapter()
+    private val MovieDetailFragment = MovieDetailFragment()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         auth = FirebaseAuth.getInstance()
-        viewPagerAdapter = ViewPagerAdapter()
+
         handler = Handler(Looper.myLooper()!!)
 
         movieViewModel.movieList.observe(this, Observer {
@@ -55,7 +60,6 @@ class MovieListFragment : Fragment() {
                     val movieList = it.data!!.body()!!.results
                     viewPagerAdapter.setProductList(movieList)
                     recyclerViewAdapter.setMovieList(movieList)
-
                 }
                 Status.LOADING -> {
                     Log.d("TEST4", "Fragment loading ${it.status.toString()}")
@@ -91,6 +95,15 @@ class MovieListFragment : Fragment() {
 
         return binding.root
     }
+
+    override fun onItemClick(movie: Result) {
+        Log.d("TEST5","Click Item ${movie.title}")
+        Toast.makeText(context,"Click ${movie.title}",Toast.LENGTH_SHORT).show()
+        val action = MovieListFragmentDirections.actionCoinListFragmentToMovieDetailFragment(movie)
+        findNavController().navigate(action)
+    }
+
+
 
 
 }

@@ -5,11 +5,12 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
+    <color name="black">#1F1F1F</color>
     <color name="white">#FFFFFFFF</color>
     <color name="hint">#92F1E5E5</color>
     <color name="background">#A0A0A0</color>
     <color name="loginButton">#4CA8D1</color>
+    <color name="subjectColor">#DCDCDC</color>
 
 
 
