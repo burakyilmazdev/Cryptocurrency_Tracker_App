@@ -22,7 +22,7 @@ class MovieViewModel @Inject constructor(
 ): ViewModel(){
 
     val movieList = MutableLiveData<Resource<Response<MovieResponse>>>()
-    private val favoriteMovies:LiveData<List<Result>>
+    val favoriteMovies:LiveData<List<Result>>
 
     init {
         getMovies()
@@ -37,13 +37,13 @@ class MovieViewModel @Inject constructor(
         }
     }
 
-    private fun addMovie(movie:Result){
+    fun addMovie(movie:Result){
         viewModelScope.launch(Dispatchers.IO) {
             MovieRepository.addMovie(movie)
         }
     }
 
-    private fun deleteMovie(movie: Result){
+    fun deleteMovie(movie: Result){
         viewModelScope.launch(Dispatchers.IO) {
             MovieRepository.deleteMovie(movie)
         }

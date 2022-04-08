@@ -5,15 +5,20 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import com.example.movie_app.databinding.FragmentMovieDetailBinding
+import com.example.movie_app.viewModel.MovieViewModel
 import com.squareup.picasso.Picasso
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class MovieDetailFragment : Fragment() {
 
     private lateinit var binding : FragmentMovieDetailBinding
     private val args by navArgs<MovieDetailFragmentArgs>()
+    private val movieViewModel: MovieViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,6 +33,10 @@ class MovieDetailFragment : Fragment() {
         binding.movieSubject.text = args.movie.overview
         Picasso.get().load("https://image.tmdb.org/t/p/w500/" + args.movie.poster_path).into(binding.movieDetail)
         binding.movieTitle.text = args.movie.title
+        binding.addToFavoritesButton.setOnClickListener {
+            Toast.makeText(context,"Added to Favorites!",Toast.LENGTH_SHORT).show()
+            movieViewModel.addMovie(args.movie)
+        }
         // Inflate the layout for this fragment
         return binding.root
     }

@@ -30,6 +30,21 @@
 
         </com.google.android.material.card.MaterialCardView>
 
+    <Button
+        android:id="@+id/addToFavoritesButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_regular"
+        android:textStyle="bold"
+        android:clickable="true"
+        app:layout_constraintTop_toBottomOf="@id/cardView"
+        android:layout_marginTop="@dimen/MarginMedium"
+        android:layout_marginLeft="@dimen/MarginMedium"
+        android:layout_marginRight="@dimen/MarginMedium"
+        android:text="@string/addToFavorite"
+        android:focusable="true">
+    </Button>
+
 
         <TextView
             android:id="@+id/movieTitle"
@@ -42,7 +57,7 @@
             android:textSize="@dimen/textSizeXLarge"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cardView" />
+            app:layout_constraintTop_toBottomOf="@id/addToFavoritesButton" />
 
     <ScrollView
         android:layout_width="match_parent"
