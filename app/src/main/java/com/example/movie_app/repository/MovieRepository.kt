@@ -1,18 +1,24 @@
 package com.example.movie_app.repository
 
+import androidx.lifecycle.LiveData
 import com.example.movie_app.data.MoviesDataSource
 import com.example.movie_app.data.models.MovieResponse
 import com.example.movie_app.data.models.Resource
+import com.example.movie_app.data.models.Result
 import com.example.movie_app.data.models.Status
 import com.example.movie_app.data.service.MovieApi
+import com.example.movie_app.room.MovieDao
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import retrofit2.Response
 import javax.inject.Inject
 
 class MovieRepository @Inject constructor(
-    private val moviesDataSource: MoviesDataSource
+    private val moviesDataSource: MoviesDataSource,private val movieDao: MovieDao
 ) {
+
+
+    val allMovies : LiveData<List<Result>> = movieDao.getAllMovies()
 
     suspend fun getMovies(): Flow<Resource<Response<MovieResponse>>> {
 
@@ -27,4 +33,14 @@ class MovieRepository @Inject constructor(
 
         }
     }
+
+    suspend fun addMovie(movie:Result){
+        movieDao.addMovie(movie)
+    }
+    
+    suspend fun deleteMovie(movie: Result){
+        movieDao.delete(movie)
+    }
+
+
 }

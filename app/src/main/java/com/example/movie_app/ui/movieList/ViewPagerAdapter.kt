@@ -1,16 +1,13 @@
-package com.example.movie_app.ui
+package com.example.movie_app.ui.movieList
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.ViewParent
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
-import androidx.viewpager2.widget.ViewPager2
 import com.example.movie_app.R
 import com.example.movie_app.data.models.Result
-import com.example.movie_app.databinding.ViewPagerItemBinding
 import com.squareup.picasso.Picasso
 
 class ViewPagerAdapter(private val listener : OnItemClickListener)

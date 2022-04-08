@@ -1,4 +1,4 @@
-package com.example.movie_app.ui
+package com.example.movie_app.ui.movieList
 
 import android.os.Bundle
 import android.os.Handler
@@ -8,36 +8,26 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModel
-import androidx.navigation.NavAction
-import androidx.navigation.NavDirections
-import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
-import com.example.movie_app.R
 import com.example.movie_app.data.models.Result
 import com.example.movie_app.data.models.Status
-import com.example.movie_app.data.service.MovieApi
 import com.example.movie_app.databinding.FragmentMovieListBinding
 import com.example.movie_app.databinding.RecyclerviewItemBinding
 import com.example.movie_app.databinding.ViewPagerItemBinding
 import com.example.movie_app.viewModel.MovieViewModel
 import com.google.firebase.auth.FirebaseAuth
 import dagger.hilt.android.AndroidEntryPoint
-import io.reactivex.rxjava3.disposables.Disposable
-import kotlinx.coroutines.withContext
-import javax.inject.Inject
 import kotlin.math.abs
 
 @AndroidEntryPoint
-class MovieListFragment : Fragment(), ViewPagerAdapter.OnItemClickListener,RecyclerViewAdapter.OnItemClickListener{
+class MovieListFragment : Fragment(), ViewPagerAdapter.OnItemClickListener,
+    RecyclerViewAdapter.OnItemClickListener {
 
     private lateinit var auth: FirebaseAuth
     private lateinit var binding: FragmentMovieListBinding

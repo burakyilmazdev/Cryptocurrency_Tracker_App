@@ -44,7 +44,7 @@
     </fragment>
     <fragment
         android:id="@+id/movieListFragment"
-        android:name="com.example.movie_app.ui.MovieListFragment"
+        android:name="com.example.movie_app.ui.movieList.MovieListFragment"
         android:label="fragment_movie_list"
         tools:layout="@layout/fragment_movie_list" >
         <action
@@ -60,7 +60,7 @@
     </fragment>
     <fragment
         android:id="@+id/movieDetailFragment"
-        android:name="com.example.movie_app.ui.MovieDetailFragment"
+        android:name="com.example.movie_app.ui.movieDetail.MovieDetailFragment"
         android:label="fragment_movie_detail"
         tools:layout="@layout/fragment_movie_detail" >
         <argument

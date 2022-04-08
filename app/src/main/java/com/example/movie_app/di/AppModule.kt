@@ -1,8 +1,12 @@
 package com.example.movie_app.di
 
+import android.app.Application
+import android.content.Context
 import com.example.movie_app.data.MoviesDataSource
 import com.example.movie_app.data.service.MovieApi
 import com.example.movie_app.repository.MovieRepository
+import com.example.movie_app.room.MovieDao
+import com.example.movie_app.room.MovieDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -19,6 +23,7 @@ object AppModule {
 
     val BASE_URL = "https://api.themoviedb.org/3/movie/"
 
+
     @Singleton
     @Provides
     fun provideMovieApi() : MovieApi = Retrofit.Builder()
@@ -30,8 +35,8 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun provideMovieRepository(moviesDataSource: MoviesDataSource) : MovieRepository{
-        return MovieRepository(moviesDataSource)
+    fun provideMovieRepository(moviesDataSource: MoviesDataSource,movieDao:MovieDao) : MovieRepository{
+        return MovieRepository(moviesDataSource,movieDao)
     }
 
     @Singleton
@@ -39,4 +44,20 @@ object AppModule {
     fun provideMovieDataSource(api: MovieApi): MoviesDataSource{
         return MoviesDataSource(api)
     }
+
+    @Singleton
+    @Provides
+    fun provideDatabase(context: Application):MovieDatabase{
+        return MovieDatabase.getMovieDatabase(context)
+    }
+
+    @Singleton
+    @Provides
+    fun provideMovieDao(movieDatabase: MovieDatabase):MovieDao{
+        return movieDatabase.getMovieDao()
+    }
+
+
+
+
 }

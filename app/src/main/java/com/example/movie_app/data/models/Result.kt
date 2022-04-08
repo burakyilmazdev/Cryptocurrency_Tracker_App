@@ -1,13 +1,16 @@
 package com.example.movie_app.data.models
 
 import android.os.Parcelable
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import kotlinx.parcelize.Parcelize
 
+@Entity(tableName = "movie_table")
 @Parcelize
 data class Result(
     val adult: Boolean,
     val backdrop_path: String,
-    val genre_ids: List<Int>,
+    @PrimaryKey(autoGenerate = true)
     val id: Int,
     val original_language: String,
     val original_title: String,

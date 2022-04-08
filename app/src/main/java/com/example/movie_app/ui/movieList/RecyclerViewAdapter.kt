@@ -1,4 +1,4 @@
-package com.example.movie_app.ui
+package com.example.movie_app.ui.movieList
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
