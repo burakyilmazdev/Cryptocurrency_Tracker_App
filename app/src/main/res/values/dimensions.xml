@@ -6,6 +6,7 @@
     <dimen name="textSizeLarge">20sp</dimen>
     <dimen name="textSizeXLarge">25sp</dimen>
     <dimen name="MarginLarge">64dp</dimen>
+    <dimen name="MarginFavoriteBottom">40dp</dimen>
     <dimen name="MarginMediumPlus">32dp</dimen>
     <dimen name="MarginMedium">16dp</dimen>
     <dimen name="MarginSmall">8dp</dimen>

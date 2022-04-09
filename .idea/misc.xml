@@ -11,8 +11,10 @@
         <entry key="..\:/Users/brky9/AndroidStudioProjects/Cryptocurrency_Tracker_App/app/src/main/res/layout/fragment_sign_up.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/brky9/AndroidStudioProjects/Movie_App/app/src/main/res/font/font.xml" value="0.23333333333333334" />
         <entry key="..\:/Users/brky9/AndroidStudioProjects/Movie_App/app/src/main/res/layout/activity_main.xml" value="0.20854700854700856" />
+        <entry key="..\:/Users/brky9/AndroidStudioProjects/Movie_App/app/src/main/res/layout/favorite_item.xml" value="0.20854700854700856" />
         <entry key="..\:/Users/brky9/AndroidStudioProjects/Movie_App/app/src/main/res/layout/favorite_movies_item.xml" value="0.20854700854700856" />
         <entry key="..\:/Users/brky9/AndroidStudioProjects/Movie_App/app/src/main/res/layout/fragment_coin_list.xml" value="0.20854700854700856" />
+        <entry key="..\:/Users/brky9/AndroidStudioProjects/Movie_App/app/src/main/res/layout/fragment_favorite.xml" value="0.20854700854700856" />
         <entry key="..\:/Users/brky9/AndroidStudioProjects/Movie_App/app/src/main/res/layout/fragment_favorite_movies.xml" value="0.20854700854700856" />
         <entry key="..\:/Users/brky9/AndroidStudioProjects/Movie_App/app/src/main/res/layout/fragment_login.xml" value="0.20854700854700856" />
         <entry key="..\:/Users/brky9/AndroidStudioProjects/Movie_App/app/src/main/res/layout/fragment_movie_detail.xml" value="0.20854700854700856" />
@@ -20,6 +22,7 @@
         <entry key="..\:/Users/brky9/AndroidStudioProjects/Movie_App/app/src/main/res/layout/recyclerview_item.xml" value="0.20854700854700856" />
         <entry key="..\:/Users/brky9/AndroidStudioProjects/Movie_App/app/src/main/res/layout/slide_item.xml" value="0.20854700854700856" />
         <entry key="..\:/Users/brky9/AndroidStudioProjects/Movie_App/app/src/main/res/layout/view_pager_item.xml" value="0.20854700854700856" />
+        <entry key="..\:/Users/brky9/AndroidStudioProjects/Movie_App/app/src/main/res/menu/bottom_nav_menu.xml" value="0.20854700854700856" />
       </map>
     </option>
   </component>

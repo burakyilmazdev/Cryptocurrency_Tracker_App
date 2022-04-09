@@ -5,9 +5,6 @@
     android:id="@+id/nav_graph"
     app:startDestination="@id/loginFragment">
 
-
-
-
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.movie_app.ui.authentication.LoginFragment"
@@ -57,6 +54,9 @@
             app:destination="@id/movieDetailFragment"
             app:enterAnim="@anim/slide_in_bottom"
             app:exitAnim="@anim/slide_out_top" />
+        <action
+            android:id="@+id/action_movieListFragment_to_favoriteFragment"
+            app:destination="@id/favoriteFragment" />
     </fragment>
     <fragment
         android:id="@+id/movieDetailFragment"
@@ -66,5 +66,20 @@
         <argument
             android:name="movie"
             app:argType="com.example.movie_app.data.models.Result" />
+        <action
+            android:id="@+id/action_movieDetailFragment_to_favoriteFragment"
+            app:destination="@id/favoriteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.example.movie_app.ui.favoriteMovies.FavoriteFragment"
+        android:label="fragment_favorite"
+        tools:layout="@layout/fragment_favorite" >
+        <action
+            android:id="@+id/action_favoriteFragment_to_movieListFragment"
+            app:destination="@id/movieListFragment" />
+        <action
+            android:id="@+id/action_favoriteFragment_to_movieDetailFragment"
+            app:destination="@id/movieDetailFragment" />
     </fragment>
 </navigation>

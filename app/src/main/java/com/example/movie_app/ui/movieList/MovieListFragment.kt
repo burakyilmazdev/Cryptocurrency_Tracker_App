@@ -75,10 +75,9 @@ class MovieListFragment : Fragment(), ViewPagerAdapter.OnItemClickListener,
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentMovieListBinding.inflate(inflater, container, false)
+        binding = com.example.movie_app.databinding.FragmentMovieListBinding.inflate(inflater, container, false)
         recyclerviewItemBinding = RecyclerviewItemBinding.inflate(inflater,container,false)
         viewPagerItemBinding = ViewPagerItemBinding.inflate(inflater,container,false)
-
         viewPager2 = binding.movieViewPager
         binding.movieRecyclerView.adapter = recyclerViewAdapter
 

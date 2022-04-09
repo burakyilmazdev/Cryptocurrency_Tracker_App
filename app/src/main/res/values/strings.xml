@@ -12,6 +12,9 @@
     <string name="registeredAlready">Already registered?</string>
     <string name="Popular">Popular</string>
     <string name="addToFavorite">Add to Favorites</string>
+    <string name="navMovies">Movies</string>
+    <string name="navFavorite">My Favorites</string>
+    <string name="FavoriteTitle">My Favorites</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
