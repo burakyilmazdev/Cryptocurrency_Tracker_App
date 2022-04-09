@@ -8,11 +8,12 @@ import com.example.movie_app.data.models.Result
 import com.example.movie_app.databinding.FavoriteItemBinding
 import com.example.movie_app.databinding.RecyclerviewItemBinding
 import com.example.movie_app.ui.movieList.RecyclerViewAdapter
+import com.example.movie_app.utility.SwipeGesture
 import com.squareup.picasso.Picasso
 
 class FavoriteAdapter:RecyclerView.Adapter<FavoriteAdapter.FavoriteViewHolder>() {
 
-    private val movieList = arrayListOf<Result>()
+    val movieList = arrayListOf<Result>()
 
     @SuppressLint("NotifyDataSetChanged")
     fun setMovieList(movieList:List<Result>){
@@ -52,4 +53,5 @@ class FavoriteAdapter:RecyclerView.Adapter<FavoriteAdapter.FavoriteViewHolder>()
     override fun getItemCount(): Int {
         return movieList.size
     }
+
 }
