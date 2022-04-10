@@ -13,40 +13,45 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import retrofit2.Response
 import javax.inject.Inject
 
 @HiltViewModel
 class MovieViewModel @Inject constructor(
-    private val MovieRepository:MovieRepository
-): ViewModel(){
+    private val MovieRepository: MovieRepository
+) : ViewModel() {
 
     val movieList = MutableLiveData<Resource<Response<MovieResponse>>>()
-    val favoriteMovies:LiveData<List<Result>>
+    val favoriteMovies: LiveData<List<Result>>
 
     init {
         getMovies()
         favoriteMovies = MovieRepository.allMovies
     }
 
-    private fun getMovies(){
+    private fun getMovies() {
         viewModelScope.launch(Dispatchers.Main) {
-          MovieRepository.getMovies().collect {
-            movieList.value = it
-          }
+            MovieRepository.getMovies().collect {
+                movieList.value = it
+            }
         }
     }
 
-    fun addMovie(movie:Result){
+    fun addMovie(movie: Result) {
         viewModelScope.launch(Dispatchers.IO) {
             MovieRepository.addMovie(movie)
         }
     }
 
-    fun deleteMovie(movie: Result){
+    fun deleteMovie(movie: Result) {
         viewModelScope.launch(Dispatchers.IO) {
             MovieRepository.deleteMovie(movie)
         }
+    }
+
+    fun searchMovie(search: String):LiveData<List<Result>>{
+       return MovieRepository.searchMovie(search)
     }
 
 }

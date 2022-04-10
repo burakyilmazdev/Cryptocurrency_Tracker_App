@@ -1,8 +1,10 @@
 package com.example.movie_app.room
 
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.room.*
 import com.example.movie_app.data.models.Result
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface MovieDao {
@@ -14,5 +16,8 @@ interface MovieDao {
     suspend fun addMovie(movie : Result)
 
     @Delete
-    fun delete(movie: Result)
+    suspend fun delete(movie: Result)
+
+    @Query("SELECT * FROM movie_table WHERE title LIKE:searchQuery")
+    fun search(searchQuery:String): LiveData<List<Result>>
 }

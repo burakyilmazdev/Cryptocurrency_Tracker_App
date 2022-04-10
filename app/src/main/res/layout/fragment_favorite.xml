@@ -24,20 +24,36 @@
 
     </TextView>
 
+    <SearchView
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:queryHint="Enter Movie Name"
+        android:background="@drawable/custom_search"
+        android:layout_marginLeft="@dimen/MarginMedium"
+        android:layout_marginRight="@dimen/MarginMedium"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/favoritesTitle"
+        android:layout_marginTop="@dimen/MarginMedium">
+
+    </SearchView>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_favorites"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:padding="@dimen/MarginMedium"
         android:orientation="vertical"
-        android:layout_marginTop="@dimen/MarginLarge"
+        android:layout_marginTop="@dimen/MarginMedium"
         android:layout_marginBottom="@dimen/MarginFavoriteBottom"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintTop_toBottomOf="@id/favoritesTitle"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent">
 
     </androidx.recyclerview.widget.RecyclerView>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

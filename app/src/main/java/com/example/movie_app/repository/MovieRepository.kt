@@ -1,6 +1,8 @@
 package com.example.movie_app.repository
 
+import android.util.Log
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import com.example.movie_app.data.MoviesDataSource
 import com.example.movie_app.data.models.MovieResponse
 import com.example.movie_app.data.models.Resource
@@ -9,6 +11,7 @@ import com.example.movie_app.data.models.Status
 import com.example.movie_app.data.service.MovieApi
 import com.example.movie_app.room.MovieDao
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.flow
 import retrofit2.Response
 import javax.inject.Inject
@@ -16,8 +19,6 @@ import javax.inject.Inject
 class MovieRepository @Inject constructor(
     private val moviesDataSource: MoviesDataSource,private val movieDao: MovieDao
 ) {
-
-
     val allMovies : LiveData<List<Result>> = movieDao.getAllMovies()
 
     suspend fun getMovies(): Flow<Resource<Response<MovieResponse>>> {
@@ -41,6 +42,12 @@ class MovieRepository @Inject constructor(
     suspend fun deleteMovie(movie: Result){
         movieDao.delete(movie)
     }
+
+    fun searchMovie(search:String): LiveData<List<Result>> {
+        return movieDao.search(search)
+    }
+
+
 
 
 }

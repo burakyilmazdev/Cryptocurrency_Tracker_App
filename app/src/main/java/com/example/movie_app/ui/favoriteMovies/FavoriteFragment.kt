@@ -6,8 +6,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.SearchView
 import android.widget.Toast
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
@@ -40,6 +42,7 @@ class FavoriteFragment : Fragment() {
     ): View? {
         binding = FragmentFavoriteBinding.inflate(inflater, container, false)
 
+        //DELETE
         val swipeGesture = object : SwipeGesture(){
 
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
@@ -47,7 +50,7 @@ class FavoriteFragment : Fragment() {
 
                 val deletedMovie = favoriteAdapter.movieList[viewHolder.adapterPosition]
                 movieViewModel.deleteMovie(deletedMovie)
-                Toast.makeText(context,"${deletedMovie.title} Unliked!",Toast.LENGTH_SHORT).show()
+                Toast.makeText(context,"${deletedMovie.title} Removed!",Toast.LENGTH_SHORT).show()
                 binding.rvFavorites.adapter?.notifyItemRemoved(viewHolder.adapterPosition)
             }
 
@@ -55,6 +58,34 @@ class FavoriteFragment : Fragment() {
 
         val touchHelper = ItemTouchHelper(swipeGesture)
         touchHelper.attachToRecyclerView(binding.rvFavorites)
+
+
+        //SEARCH
+        binding.search.clearFocus()
+        binding.search.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+            override fun onQueryTextSubmit(p0: String?): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(query: String?): Boolean {
+                if (query.isNullOrEmpty()){
+                    Log.d("TEST5","text empty")
+                    movieViewModel.favoriteMovies.observe(viewLifecycleOwner, Observer {
+                        favoriteAdapter.setMovieList(it)
+                    })
+                }else{
+                    Log.d("TEST5","$query text not empty")
+                    val searchedQuery = "%$query%"
+                    movieViewModel.searchMovie(searchedQuery).observe(viewLifecycleOwner, Observer {
+                        favoriteAdapter.setMovieList(it)
+                    })
+                }
+                return true
+            }
+
+        })
+
+
 
         binding.rvFavorites.adapter = favoriteAdapter
 
