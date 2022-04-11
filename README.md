@@ -21,6 +21,8 @@ https://user-images.githubusercontent.com/45144910/162810988-15c9c584-345f-48a2-
 
 # Screenshots
 
+<img src="![Screenshot_20220411_204637](https://user-images.githubusercontent.com/45144910/162811235-7eff5e0a-0edf-4f68-889e-5d0a26c3e317.png)" style=" width:100px ; height:100px " />
+
 <div align="center">
    <img src="![Screenshot_20220411_204637](https://user-images.githubusercontent.com/45144910/162811235-7eff5e0a-0edf-4f68-889e-5d0a26c3e317.png)" width="400px"</img>
   <img src="![Screenshot_20220411_210817](https://user-images.githubusercontent.com/45144910/162811317-27366f4f-d58a-43ff-8f49-55b13c638e1e.png)" width="400px"</img> 
