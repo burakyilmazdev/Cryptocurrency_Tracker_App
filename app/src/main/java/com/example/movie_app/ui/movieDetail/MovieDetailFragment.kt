@@ -24,11 +24,6 @@ class MovieDetailFragment : Fragment() {
     private val args by navArgs<MovieDetailFragmentArgs>()
     private val movieViewModel: MovieViewModel by viewModels()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
