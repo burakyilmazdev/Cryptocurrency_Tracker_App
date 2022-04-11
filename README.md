@@ -4,16 +4,16 @@ A movie app that shows popular movies and their informations. You can add movies
 The Api that has been used : https://www.themoviedb.org/
 Tech stack that has been used;
 
--MVVM
--Dagger/Hilt
--Data Binding
--Google Firebase Authentication Service
--Retrofit
--Kotlin Coroutines
--Room Database
--Navigation Component
--Picasso
--View Pager2
+- MVVM
+- Dagger/Hilt
+- Data Binding
+- Google Firebase Authentication Service
+- Retrofit
+- Kotlin Coroutines
+- Room Database
+- Navigation Component
+- Picasso
+- View Pager2
 
 # App Demo
 
