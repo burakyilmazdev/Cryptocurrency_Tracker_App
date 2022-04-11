@@ -21,7 +21,16 @@ https://user-images.githubusercontent.com/45144910/162810988-15c9c584-345f-48a2-
 
 # Screenshots
 
-![Screenshot_20220411_204637](https://user-images.githubusercontent.com/45144910/162812496-6e59de30-a7ae-4dca-a7c0-63964ab33c35.png)= 300x300
+<p float="left">
+  <img src="https://raw.githubusercontent.com/burakyilmazdev/Movie_App/master/Screenshot_20220411_204637.png" width="300" height="600" />
+  <img src="https://raw.githubusercontent.com/burakyilmazdev/Movie_App/master/Screenshot_20220411_210817.png" width="300" height="600" /> 
+  <img src="https://raw.githubusercontent.com/burakyilmazdev/Movie_App/master/Screenshot_20220411_210705.png" width="300" height="600" />
+</p>
+
+<p float="left">
+  <img src="https://raw.githubusercontent.com/burakyilmazdev/Movie_App/master/Screenshot_20220411_210858.png" width="300" height="600" />
+  <img src="https://raw.githubusercontent.com/burakyilmazdev/Movie_App/master/Screenshot_20220411_210905.png" width="300" height="600" /> 
+</p>
 
 
 
