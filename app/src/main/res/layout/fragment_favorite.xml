@@ -1,26 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.favoriteMovies.FavoriteFragment">
 
     <TextView
         android:id="@+id/favoritesTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/FavoriteTitle"
-        android:textColor="@color/white"
-        android:textAlignment="center"
-        android:textStyle="bold"
-        android:fontFamily="@font/poppins_regular"
         android:layout_marginStart="@dimen/MarginMedium"
-        android:textSize="@dimen/textSizeXLarge"
         android:layout_marginTop="@dimen/MarginMediumPlus"
-        app:layout_constraintTop_toTopOf="parent"
+        android:fontFamily="@font/poppins_regular"
+        android:text="@string/FavoriteTitle"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/textSizeXLarge"
+        android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
-        >
+        app:layout_constraintTop_toTopOf="parent">
 
     </TextView>
 
@@ -28,47 +27,45 @@
         android:id="@+id/buttonSignOut"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/SignOut"
+        android:layout_marginTop="@dimen/MarginMedium"
         android:fontFamily="@font/poppins_regular"
-        android:textStyle="bold"
+        android:text="@string/SignOut"
         android:textSize="@dimen/textSizeSmall"
+        android:textStyle="bold"
         app:layout_constraintLeft_toRightOf="@id/favoritesTitle"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="@dimen/MarginMedium" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <SearchView
         android:id="@+id/search"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:queryHint="Enter Movie Name"
-        android:background="@drawable/custom_search"
         android:layout_marginLeft="@dimen/MarginMedium"
+        android:layout_marginTop="@dimen/MarginMedium"
         android:layout_marginRight="@dimen/MarginMedium"
+        android:background="@drawable/custom_search"
+        android:queryHint="Enter Movie Name"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/favoritesTitle"
-        android:layout_marginTop="@dimen/MarginMedium">
+        app:layout_constraintTop_toBottomOf="@id/favoritesTitle">
 
     </SearchView>
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_favorites"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="@dimen/MarginMedium"
+        android:layout_height="580dp"
+        android:layout_marginLeft="@dimen/MarginMedium"
+        android:layout_marginTop="@dimen/MarginSmall"
+        android:layout_marginRight="@dimen/MarginMedium"
         android:orientation="vertical"
-        android:layout_marginTop="@dimen/MarginMedium"
-        android:layout_marginBottom="@dimen/MarginFavoriteBottom"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintTop_toBottomOf="@id/search"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent">
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search">
 
     </androidx.recyclerview.widget.RecyclerView>
-
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
