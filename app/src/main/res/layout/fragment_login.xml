@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@mipmap/login"
+    android:background="@color/black"
     tools:context=".ui.authentication.LoginFragment">
 
     <TextView
@@ -28,6 +28,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_title"
+        android:background="@color/subjectColor"
         android:layout_marginTop="@dimen/MarginMediumPlus"
         android:textColor="@color/white"
         android:layout_marginLeft="@dimen/MarginMediumPlus"
@@ -40,6 +41,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/et_mail"
+        android:background="@color/subjectColor"
         android:layout_marginTop="@dimen/MarginMediumPlus"
         android:textColor="@color/white"
         android:layout_marginLeft="@dimen/MarginMediumPlus"

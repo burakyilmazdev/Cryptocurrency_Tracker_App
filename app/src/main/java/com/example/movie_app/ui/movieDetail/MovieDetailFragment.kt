@@ -9,9 +9,11 @@ import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.example.movie_app.R
 import com.example.movie_app.databinding.FragmentMovieDetailBinding
 import com.example.movie_app.ui.movieList.MovieListFragmentDirections
 import com.example.movie_app.viewModel.MovieViewModel
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.squareup.picasso.Picasso
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -32,6 +34,8 @@ class MovieDetailFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentMovieDetailBinding.inflate(inflater, container, false)
+        activity?.findViewById<BottomNavigationView>(R.id.bottomNav)?.visibility = View.VISIBLE
+
         binding.movieSubject.text = args.movie.overview
         Picasso.get().load("https://image.tmdb.org/t/p/w500/" + args.movie.poster_path).into(binding.movieDetail)
         binding.movieTitle.text = args.movie.title

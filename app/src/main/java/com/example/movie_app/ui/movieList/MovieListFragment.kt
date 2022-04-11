@@ -15,12 +15,14 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
+import com.example.movie_app.R
 import com.example.movie_app.data.models.Result
 import com.example.movie_app.data.models.Status
 import com.example.movie_app.databinding.FragmentMovieListBinding
 import com.example.movie_app.databinding.RecyclerviewItemBinding
 import com.example.movie_app.databinding.ViewPagerItemBinding
 import com.example.movie_app.viewModel.MovieViewModel
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import dagger.hilt.android.AndroidEntryPoint
 import kotlin.math.abs
@@ -76,6 +78,8 @@ class MovieListFragment : Fragment(), ViewPagerAdapter.OnItemClickListener,
         savedInstanceState: Bundle?
     ): View? {
         binding = com.example.movie_app.databinding.FragmentMovieListBinding.inflate(inflater, container, false)
+        activity?.findViewById<BottomNavigationView>(R.id.bottomNav)?.visibility = View.VISIBLE
+
         recyclerviewItemBinding = RecyclerviewItemBinding.inflate(inflater,container,false)
         viewPagerItemBinding = ViewPagerItemBinding.inflate(inflater,container,false)
         viewPager2 = binding.movieViewPager

@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.navigation.fragment.NavHostFragment
 import com.example.movie_app.R
 import com.example.movie_app.databinding.FragmentSignUpBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 
 
@@ -32,6 +33,8 @@ class SignUpFragment : Fragment() {
     ): View? {
 
         binding = FragmentSignUpBinding.inflate(inflater, container, false)
+        activity?.findViewById<BottomNavigationView>(R.id.bottomNav)?.visibility = View.GONE
+
         binding.tvAlreadyRegistered.setOnClickListener {
             NavHostFragment.findNavController(this).navigate(R.id.action_signUpFragment_to_loginFragment)
         }

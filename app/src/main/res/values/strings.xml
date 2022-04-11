@@ -15,6 +15,7 @@
     <string name="navMovies">Movies</string>
     <string name="navFavorite">My Favorites</string>
     <string name="FavoriteTitle">My Favorites</string>
+    <string name="SignOut">SIGN OUT</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

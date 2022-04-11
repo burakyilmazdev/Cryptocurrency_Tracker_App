@@ -12,6 +12,7 @@ import androidx.navigation.fragment.NavHostFragment
 import com.example.movie_app.R
 import com.example.movie_app.data.service.MovieApi
 import com.example.movie_app.databinding.FragmentLoginBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import javax.inject.Inject
 
@@ -33,6 +34,8 @@ class LoginFragment: Fragment() {
     ): View? {
 
         binding = FragmentLoginBinding.inflate(inflater, container, false)
+
+        activity?.findViewById<BottomNavigationView>(R.id.bottomNav)?.visibility = View.GONE
 
         //navigate to create account
         binding.createAccount.setOnClickListener {

@@ -8,7 +8,7 @@
 
     <TextView
         android:id="@+id/favoritesTitle"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/FavoriteTitle"
         android:textColor="@color/white"
@@ -17,12 +17,25 @@
         android:fontFamily="@font/poppins_regular"
         android:layout_marginStart="@dimen/MarginMedium"
         android:textSize="@dimen/textSizeXLarge"
-        android:layout_marginTop="@dimen/MarginMedium"
+        android:layout_marginTop="@dimen/MarginMediumPlus"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent">
+        >
 
     </TextView>
+
+    <Button
+        android:id="@+id/buttonSignOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/SignOut"
+        android:fontFamily="@font/poppins_regular"
+        android:textStyle="bold"
+        android:textSize="@dimen/textSizeSmall"
+        app:layout_constraintLeft_toRightOf="@id/favoritesTitle"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="@dimen/MarginMedium" />
 
     <SearchView
         android:id="@+id/search"
@@ -53,6 +66,8 @@
         app:layout_constraintRight_toRightOf="parent">
 
     </androidx.recyclerview.widget.RecyclerView>
+
+
 
 
 
