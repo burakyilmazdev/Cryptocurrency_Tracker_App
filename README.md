@@ -1,7 +1,7 @@
 # Movie_App
 
-A movie app that shows popular movies and their informations. You can add movies to your favorites.
-The Api that has been used : https://www.themoviedb.org/
+A movie app that shows popular movies and their informations. You can add movies to your favorites.<br/>
+ The Api that has been used : https://www.themoviedb.org/ . <br/>
 Tech stack that has been used;
 
 - MVVM
