@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Movie_App</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="appTitle">Movie App</string>
+    <string name="appTitle">InfoMovie</string>
     <string name="signUp">Sign Up</string>
     <string name="hintEmail">E-mail</string>
     <string name="hintPassword">Password</string>

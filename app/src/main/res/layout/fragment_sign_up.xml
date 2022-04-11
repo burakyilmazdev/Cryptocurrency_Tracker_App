@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/subjectColor"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@mipmap/login"
     tools:context=".ui.authentication.LoginFragment">
 
     <TextView
@@ -14,7 +14,7 @@
         android:text="@string/signUp"
         android:textAlignment="center"
         android:textSize="@dimen/textSizeXLarge"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:layout_marginStart="@dimen/MarginMediumPlus"
         android:layout_marginTop="@dimen/loginTitleMargin"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,8 +28,10 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_title"
+        android:drawableStart="@drawable/ic_baseline_email_24"
+        android:drawablePadding="@dimen/MarginSmall"
         android:layout_marginTop="@dimen/MarginMediumPlus"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:layout_marginLeft="@dimen/MarginMediumPlus"
         android:layout_marginRight="@dimen/MarginMediumPlus"
         android:hint="@string/hintEmail"/>
@@ -40,8 +42,10 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/et_mail"
+        android:drawableStart="@drawable/ic_baseline_lock_24"
+        android:drawablePadding="@dimen/MarginSmall"
         android:layout_marginTop="@dimen/MarginMediumPlus"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:layout_marginLeft="@dimen/MarginMediumPlus"
         android:layout_marginRight="@dimen/MarginMediumPlus"
         android:hint="@string/hintPassword"/>
@@ -52,8 +56,10 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/et_password"
+        android:drawableStart="@drawable/ic_baseline_lock_24"
+        android:drawablePadding="@dimen/MarginSmall"
         android:layout_marginTop="@dimen/MarginMediumPlus"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:layout_marginLeft="@dimen/MarginMediumPlus"
         android:layout_marginRight="@dimen/MarginMediumPlus"
         android:hint="@string/hintPassword"/>
@@ -67,8 +73,7 @@
         android:text="@string/signUpButton"
         android:layout_marginLeft="@dimen/MarginMediumPlus"
         android:layout_marginRight="@dimen/MarginMediumPlus"
-        android:layout_marginTop="@dimen/MarginMedium"
-        android:backgroundTint="@color/loginButton">
+        android:layout_marginTop="@dimen/MarginMedium">
     </Button>
 
     <TextView
@@ -79,7 +84,7 @@
         app:layout_constraintTop_toBottomOf="@id/btn_signUp"
         android:text="@string/registeredAlready"
         android:textSize="@dimen/textSizeLarge"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:layout_marginLeft="@dimen/MarginMediumPlus"
         android:layout_marginRight="@dimen/MarginMediumPlus"
         android:layout_marginTop="@dimen/MarginMedium">
